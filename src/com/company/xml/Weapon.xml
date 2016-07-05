@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Weapon.xsd">
+    <weapon id = "gun1">
+        <model>M16A4</model>
+        <handy>two_handed</handy>
+        <origin>USA</origin>
+        <ttc>
+            <range>middle-800</range>
+            <effectiveRange>600</effectiveRange>
+            <holder>true</holder>
+            <optics>true</optics>
+        </ttc>
+        <material>
+            steel,
+            aluminum,
+            plastic
+        </material>
+    </weapon>
+
+    <weapon id = "gun2">
+        <model>Desert Eagle</model>
+        <handy>one_handed</handy>
+        <origin>Israel</origin>
+        <ttc>
+            <range>short-200</range>
+            <effectiveRange>120</effectiveRange>
+            <holder>true</holder>
+            <optics>false</optics>
+        </ttc>
+        <material>
+            steel,
+            aluminum,
+        </material>
+    </weapon>
+
+    <weapon id = "gun3">
+        <model>AK-47</model>
+        <handy>two_handed</handy>
+        <origin>Russia</origin>
+        <ttc>
+            <range>high-3000</range>
+            <effectiveRange>1500</effectiveRange>
+            <holder>true</holder>
+            <optics>false</optics>
+        </ttc>
+        <material>
+            steel,
+            plastic
+        </material>
+    </weapon>
+
+    <weapon id = "gun4">
+        <model>Negev NG7</model>
+        <handy>two_handed</handy>
+        <origin>Israel</origin>
+        <ttc>
+            <range>high-4000</range>
+            <effectiveRange>2000</effectiveRange>
+            <holder>false</holder>
+            <optics>false</optics>
+        </ttc>
+        <material>
+            steel,
+            plastic
+        </material>
+    </weapon>
+</gun>
