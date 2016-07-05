@@ -1,6 +1,7 @@
 package com.company.model.parser;
 
 import com.company.model.Gun;
+import com.company.model.ObjectFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -23,6 +24,7 @@ import java.util.List;
 public class SaxParser extends DefaultHandler implements Parser{
     private String thisElement;
     private Gun.Weapon weapon;
+    private ObjectFactory objectFactory = new ObjectFactory();
     List<Gun.Weapon> weapons = new ArrayList<>();
 
     @Override
@@ -48,11 +50,11 @@ public class SaxParser extends DefaultHandler implements Parser{
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
         thisElement = qName;
         if (thisElement.equals("weapon")){
-            weapon = new Gun.Weapon();
+            weapon = objectFactory.createGunWeapon();
             weapon.setId(attributes.getValue(0));
         }
         if (thisElement.equals("ttc")){
-            weapon.setTtc(new Gun.Weapon.Ttc());
+            weapon.setTtc(objectFactory.createGunWeaponTtc());
         }
     }
 
