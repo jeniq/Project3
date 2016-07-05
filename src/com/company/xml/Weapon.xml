@@ -4,7 +4,7 @@
         xsi:noNamespaceSchemaLocation="Weapon.xsd">
     <weapon id = "gun1">
         <model>M16A4</model>
-        <handy>two_handed</handy>
+        <handy>TWO_HANDED</handy>
         <origin>USA</origin>
         <ttc>
             <range>middle-800</range>
@@ -21,7 +21,7 @@
 
     <weapon id = "gun2">
         <model>Desert Eagle</model>
-        <handy>one_handed</handy>
+        <handy>ONE_HANDED</handy>
         <origin>Israel</origin>
         <ttc>
             <range>short-200</range>
@@ -37,7 +37,7 @@
 
     <weapon id = "gun3">
         <model>AK-47</model>
-        <handy>two_handed</handy>
+        <handy>TWO_HANDED</handy>
         <origin>Russia</origin>
         <ttc>
             <range>high-3000</range>
@@ -53,7 +53,7 @@
 
     <weapon id = "gun4">
         <model>Negev NG7</model>
-        <handy>two_handed</handy>
+        <handy>TWO_HANDED</handy>
         <origin>Israel</origin>
         <ttc>
             <range>high-4000</range>
