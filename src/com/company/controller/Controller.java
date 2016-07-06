@@ -12,6 +12,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class Controller {
     // The work method
     public void processUser(){
         List<Gun.Weapon> weapons;
-        //if (validate(Initialization.XML_PATH, Initialization.XSD_PATH)){
+        if (validate(Initialization.XML_PATH, Initialization.XSD_PATH)){
 
             // SAX parser
             view.print(View.SAX_PARSER);
@@ -55,9 +56,9 @@ public class Controller {
             domParser = new DomParser();
             weapons = domParser.parse(Initialization.XML_PATH);
             view.print(weapons);
-      /*  }else{
+        }else{
             view.print(View.INVALID_DOCUMENT);
-        }*/
+        }
     }
 
     /**
@@ -69,13 +70,13 @@ public class Controller {
     public boolean validate(String xmlPath, String xsdPath){
         try{
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new StreamSource(xsdPath));
+            Schema schema = factory.newSchema(new File(xsdPath));
             Validator validator = schema.newValidator();
-            validator.validate(new StreamSource(xmlPath));
-            return true;
+            validator.validate(new StreamSource(new File(xmlPath)));
         } catch (SAXException | IOException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
+        return true;
     }
 }
