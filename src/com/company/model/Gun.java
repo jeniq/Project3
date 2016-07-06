@@ -1,14 +1,9 @@
 
 package com.company.model;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -345,6 +340,17 @@ public class Gun {
             this.id = value;
         }
 
+        @Override
+        public String toString() {
+            return "Weapon "
+                    + "[id = " + id + "] "
+                    + "model: " + model
+                    + "\nhandy: " + handy
+                    + ", origin: " + origin
+                    + ", TTC [" + ttc.toString() + "] "
+                    + "\nmaterial: " + material + ';';
+        }
+
 
         /**
          * <p>Java class for anonymous complex type.
@@ -469,6 +475,15 @@ public class Gun {
             public void setOptics(boolean value) {
                 this.optics = value;
             }
+
+            @Override
+            public String toString() {
+                return "range = " + range + "m"
+                        + ", effectiveRange = " + effectiveRange + "m"
+                        + ", holder = " + holder
+                        + ", optics = " + optics;
+            }
+
 
         }
 
